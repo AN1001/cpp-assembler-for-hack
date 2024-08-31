@@ -37,6 +37,7 @@ std::string get_jump(const std::string& instruction){
 }
 
 int main() {
+	//Edit this to where your files lie
 	const std::string path = "./Desktop/proj_euler/";
 	std::cout << "Assuming path is " << path << std::endl <<"Enter file name to assemble: ";
 	std::string inFileName;
