@@ -37,13 +37,18 @@ std::string get_jump(const std::string& instruction){
 }
 
 int main() {
-	//Edit this to where your files lie
+	//Edit to be path to your files from working directory
 	const std::string path = "./Desktop/proj_euler/";
-	std::cout << "Assuming path is " << path << std::endl <<"Enter file name to assemble: ";
+	std::cout << "Assuming path is " << path << std::endl << "Enter file name to assemble: ";
 	std::string inFileName;
 	std::cin >> inFileName;
 
 	std::ifstream file(path + inFileName);
+
+	if(!file.is_open()) {
+		std::cerr << "Error, could not find file; ensure you have read the readme.md" << std::endl;
+		return 1;		
+	}
 
 	//First sweep to check for tokens
 	std::map<std::string, int> tokens;
@@ -178,4 +183,6 @@ int main() {
 			std::cout << instruction << std::endl;	
 		}}
 	}
+
+	return 0;
 }
